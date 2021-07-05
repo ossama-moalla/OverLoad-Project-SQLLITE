@@ -1,0 +1,11 @@
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\bin\x86\Release\OverLoadServer Manager.exe.config
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\obj\x86\Release\OverLoadServer_Interface.Log.resources
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\obj\x86\Release\OverLoadServer_Interface.Properties.Resources.resources
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\obj\x86\Release\OverLoadServer_Interface.ServerConfig.resources
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\obj\x86\Release\OverLoadServer Interface.csproj.GenerateResource.Cache
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\bin\x86\Release\OverLoadServer Manager.exe
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\bin\x86\Release\OverLoadServer Manager.pdb
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\bin\x86\Release\System.Data.SQLite.dll
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\bin\x86\Release\System.Data.SQLite.xml
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\obj\x86\Release\OverLoadServer Manager.exe
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\obj\x86\Release\OverLoadServer Manager.pdb

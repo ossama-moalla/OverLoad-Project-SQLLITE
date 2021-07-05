@@ -1,0 +1,395 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.IO;
+using ItemProject.Classes.SqlInterface;
+namespace ItemProject.Forms
+{
+    public partial class ItemForm : Form
+    {
+        MenuItem CreateFolderMenuItem;
+        MenuItem CreateItemMenuItem;
+        DatabaseInterface DB;
+        public int? FolderID;
+        DataTable FoldersInCurrentFolder;
+        FolderSQL foldersql;
+        DataTable  FolderTable;
+
+        Button front, end;
+        Button[] b;
+        int Path_startIndex = 0;
+        public ItemForm(DatabaseInterface db,int? id)
+        {
+            DB = db;
+            foldersql = new FolderSQL(DB);
+            InitializeComponent();
+            CreateFolderMenuItem = new MenuItem("انشاء مجلد", CreateFolder_MenuItem_Click);
+            CreateItemMenuItem = new MenuItem("اضافة عنصر", CreateItem_MenuItem_Click);
+            FolderID = id;
+            FillTreeViewFolder();
+            RefreshItems();
+            comboBox1.SelectedIndex = 0;
+            
+
+             front = new Button();
+             end = new Button();
+            front.Font = new Font(front.Font.FontFamily, 6 );
+            
+            front.Size = new Size(25, PanelPath.Height);
+            front.TextAlign = ContentAlignment.MiddleCenter;
+            front.Text = ">>";
+            front.BackColor = Color.SkyBlue;
+            front.Location = new Point(0, 0);
+            end.Size = new Size(25, PanelPath.Height);
+
+            end.Text = "<<";
+            end.Font = new Font(front.Font.FontFamily, 6);
+            end.BackColor = Color.SkyBlue;
+            front.Click += new EventHandler(Front_Click);
+            end.Click += new EventHandler(End_Click);
+        }
+
+        public void RefreshItems()
+        {
+            listView1.Items.Clear();
+            FolderSQL f = new FolderSQL(DB);
+            FoldersInCurrentFolder = null;
+            FoldersInCurrentFolder = f.GetGontenetFolders(FolderID);
+            for (int i = 0; i < FoldersInCurrentFolder.Rows.Count; i++)
+            {
+                ListViewItem item = new ListViewItem(FoldersInCurrentFolder.Rows[i][1].ToString());
+                item.Name = FoldersInCurrentFolder.Rows[i][0].ToString();
+                item.SubItems.Add("مجلد");
+                item.SubItems.Add(FoldersInCurrentFolder.Rows[i][2].ToString());
+                item.ImageIndex = 1;
+                listView1.Items.Add(item);
+                
+            }
+            string  fid;
+            if (FolderID == null) fid = "null";
+            else fid = FolderID.ToString();
+            TreeNode[] node = treeViewFolders.Nodes.Find(fid, true);
+            treeViewFolders.CollapseAll();
+            node[0].Expand();
+            treeViewFolders.SelectedNode = node[0];
+
+            b = FolderIDPath();
+            PanelPath.Controls.Clear();
+            int ButtonWidth = 0;
+            for (int i = 0; i < b.Length; i++)
+            {
+                ButtonWidth = ButtonWidth + b[i].Width;
+            }
+            if (ButtonWidth > PanelPath.Width)
+            {
+                int availablewidth = 0;
+                PanelPath.Controls.Add(front);
+                availablewidth = PanelPath.Width - front.Width - end.Width;
+                int buton_x = front.Width;
+                Path_startIndex  =b.Length -1;
+                int wid = 0;
+                for (int j = b.Length - 1; j>0; j--)
+                {
+                    wid = wid + b[j].Width;
+                    if(wid >availablewidth ) { Path_startIndex = j + 1;break; }
+                }
+                int i = Path_startIndex;
+                while (i<b.Length)
+                {
+                    b[i].Location = new Point(buton_x, PanelPath.Location.Y - 2);
+                    PanelPath.Controls.Add(b[i]);
+                    availablewidth = availablewidth - b[i].Width;
+                    buton_x = buton_x + b[i].Width;
+                    i++;
+                }
+            }
+            else
+            {
+                int x1 = 0;
+                for (int i =0 ; i < b.Length ; i++)
+                {
+                    b[i].Location = new Point(x1, PanelPath.Location.Y - 2);
+                    PanelPath.Controls.Add(b[i]);
+                    b[i].Show();
+                    x1 = x1 + b[i].Width;
+                }
+
+            }
+
+            }
+        public Button[] FolderIDPath()
+        {
+
+            int? id = FolderID;
+
+            List<int?> list = new List<int?>();
+            while (true)
+            {
+
+                if (id != null) { list.Add(id); id = foldersql.GetParentID(id); }
+                else { list.Add(id); break; }
+
+
+            }
+            int?[] ids_array = list.ToArray();
+            Button [] b = new Button[ids_array.Length ];
+            for(int j=0;j<ids_array .Length;j++)
+            {
+                int i = ids_array.Length - j-1;
+                b[i] = new Button();
+                b[i].Image = ImageListButton.Images[0];
+ 
+                b[i].AutoSize = true;
+                b[i].AutoSizeMode = AutoSizeMode.GrowAndShrink;
+                b[i].AutoEllipsis = false;
+                b[i].Font = new Font(b[i].Font.FontFamily, 10);
+                b[i].FlatStyle = FlatStyle.Flat;
+                b[i].FlatAppearance.BorderSize = 0;
+                if (ids_array[j] == null)
+                {
+                    b[i].Name = "NULL";
+                    b[i].Text = "ROOT";
+                }
+                else
+                {
+                    b[i].Name = ids_array[j].ToString ();
+                    b[i].Text = foldersql.GetFolderNameByID(Convert.ToInt32(ids_array[j]));
+                }
+                b[i].TextImageRelation = TextImageRelation.ImageBeforeText ;
+                b[i].Click += new EventHandler(Button_Path_Click);
+
+            }
+            return b;
+
+        }
+        public void FillTreeViewFolder()
+        {
+            FolderTable = foldersql.GetFoldersList();
+            treeViewFolders.Nodes.Clear();
+            TreeNode r = new TreeNode("الجذر");
+            r.Name = "null";
+            r.ImageIndex = 0;
+            treeViewFolders.Nodes.Add(r);
+            for (int i = 0; i < FolderTable.Rows.Count; i++)
+            {
+                string parentid;
+                int idd;
+                try
+                {
+                    idd = Convert.ToInt32(FolderTable.Rows[i][2]);
+                    parentid = idd.ToString();
+                }
+                catch
+                {
+                    parentid = "null";
+                }
+                
+                    TreeNode  [] node = treeViewFolders.Nodes.Find(parentid,true );
+                    TreeNode n = new TreeNode(FolderTable.Rows[i][1].ToString());
+                    n.Name = FolderTable.Rows[i][0].ToString();
+                    n.ImageIndex = 0;
+                    node[0].Nodes.Add(n);
+            }
+        }
+        private void OptimizePath()
+        {
+            PanelPath.Controls.Clear();
+            int buton_x = 0;
+            int front_width = 0;
+            if (Path_startIndex > 0)
+            {
+                PanelPath.Controls.Add(front);
+                 buton_x = front.Width;
+                front_width = front.Width;
+            }
+            int i = Path_startIndex;
+            int availablewidth = PanelPath.Width - front_width - end.Width;
+            
+            while (i < b.Length)
+            {
+
+                b[i].Location = new Point(buton_x, PanelPath.Location.Y - 2);
+                if (b[i].Width > availablewidth)
+                {
+                    end.Location = new Point(buton_x, 0);
+                    PanelPath.Controls.Add(end);
+                    break;
+                }
+                PanelPath.Controls.Add(b[i]);
+                availablewidth = availablewidth - b[i].Width;
+                buton_x = buton_x + b[i].Width;
+                i++;
+            }
+
+        }
+        private void Button_Path_Click(object sender, EventArgs e)
+        {
+            Button bb = (Button)sender;
+            try
+            {
+                FolderID = Convert.ToInt32(bb.Name );
+            }
+            catch
+            {
+                FolderID = null;
+            }
+            RefreshItems();
+        }
+        private void End_Click(object sender, EventArgs e)
+        {
+            Path_startIndex = Path_startIndex + 1;
+            OptimizePath();
+        }
+        private void Front_Click(object sender, EventArgs e)
+        {
+            if (Path_startIndex == 0) return;
+            Path_startIndex = Path_startIndex - 1;
+            OptimizePath();
+        }
+        private void listView1_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            bool match = false;
+            ListViewItem item=new ListViewItem ();
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                foreach (ListViewItem item1 in listView1.Items)
+                {
+                    if (item1.Bounds.Contains(new Point(e.X, e.Y)))
+                    {
+                        match = true;
+                        item = item1;
+                        break;
+                    }
+                }
+                if (match)
+                {
+                    MessageBox.Show(item.SubItems[0].Text);
+                    //if(item.SubItems [0].Text == "مجلد")
+                    //{
+                    //}
+                    MenuItem[] mi = new MenuItem[] { new MenuItem(item .Name), new MenuItem(item .Text ) };
+                    listView1.ContextMenu = new ContextMenu(mi);
+                }
+                else
+                {
+
+                    MenuItem[] mi = new MenuItem[] { CreateFolderMenuItem, CreateItemMenuItem };
+                    listView1.ContextMenu = new ContextMenu(mi);
+                    //match = true;
+
+                }
+
+            }
+
+        }
+        private void CreateFolder_MenuItem_Click(object sender, EventArgs e)
+        {
+            string name=null;
+            int j = 1;
+            bool Exists = true;
+            name = "مجلد جديد" + j;
+            if (FoldersInCurrentFolder.Rows.Count > 0)
+            {
+                while (Exists)
+                {
+                    bool found = false;
+                    for (int i = 0; i < FoldersInCurrentFolder.Rows.Count; i++)
+                    {
+                        if (FoldersInCurrentFolder.Rows[i][1].ToString() == name)
+                            found = true;
+                    }
+                    if (found == true)
+                    { j++; name = "مجلد جديد" + j; }
+                    else Exists = false;
+                }
+            }
+
+            InputBox inp = new InputBox("انشاء مجلد جديد", "يرجى اختيار اسم المجلد",name);
+            DialogResult dd= inp.ShowDialog();
+            if(dd==DialogResult.OK )
+            {
+                
+                foldersql.CreateFolder(inp.TextBoxInput .Text,FolderID  );
+                FillTreeViewFolder();
+                RefreshItems();
+
+            }
+            
+        }
+        private void CreateItem_MenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("hello item");
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            switch (comboBox1.SelectedIndex)
+            {
+                case 0: listView1.View = View.List; break;
+                case 1: listView1.View = View.SmallIcon ; break;
+                case 2: listView1.View = View.Details ; break;
+            }
+           
+        }
+
+        private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            
+            if(e.Button==MouseButtons.Left && listView1.SelectedItems.Count >0)
+            {
+                
+                string foldername = listView1.SelectedItems[0].Text;
+    
+                for (int i = 0; i < FoldersInCurrentFolder.Rows.Count; i++)
+                {
+                    if (foldername == FoldersInCurrentFolder.Rows[i][1].ToString())
+                    {
+                        FolderID = Convert.ToInt32(FoldersInCurrentFolder.Rows[i][0]);
+                     
+
+                        RefreshItems();
+                    }
+
+                }
+            }
+        }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+            if (FolderID == null) return;
+            FolderID = foldersql.GetParentID(FolderID);
+            RefreshItems();
+        }
+
+        private void treeViewFolders_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+           
+            if (e.Button == MouseButtons.Left )
+            {
+                if (treeViewFolders.SelectedNode != null)
+                {
+                    try
+                    {
+                        FolderID = Convert.ToInt32(treeViewFolders.SelectedNode.Name);
+                    }
+                    catch
+                    {
+                        FolderID = null;
+                    }
+
+                    RefreshItems();
+                }
+          
+            }
+        }
+    }
+  
+}

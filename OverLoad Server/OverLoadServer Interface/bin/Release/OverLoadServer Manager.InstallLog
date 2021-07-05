@@ -1,0 +1,13 @@
+﻿Installing assembly 'D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\bin\Release\OverLoadServer Manager.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\bin\Release\OverLoadServer Manager.InstallLog
+   assemblypath = D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\bin\Release\OverLoadServer Manager.exe
+No public installers with the RunInstallerAttribute.Yes attribute could be found in the D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\bin\Release\OverLoadServer Manager.exe assembly.
+Committing assembly 'D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\bin\Release\OverLoadServer Manager.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\bin\Release\OverLoadServer Manager.InstallLog
+   assemblypath = D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\bin\Release\OverLoadServer Manager.exe
+No public installers with the RunInstallerAttribute.Yes attribute could be found in the D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\bin\Release\OverLoadServer Manager.exe assembly.
+Remove InstallState file because there are no installers.

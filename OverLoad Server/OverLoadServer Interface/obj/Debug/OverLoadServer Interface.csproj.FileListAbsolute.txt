@@ -1,0 +1,41 @@
+C:\Users\o_moalla\Desktop\OverLoad Project\OverLoad Server\OverLoadServer Interface\bin\Debug\OverLoadServer Interface.exe.config
+C:\Users\o_moalla\Desktop\OverLoad Project\OverLoad Server\OverLoadServer Interface\bin\Debug\OverLoadServer Interface.exe
+C:\Users\o_moalla\Desktop\OverLoad Project\OverLoad Server\OverLoadServer Interface\bin\Debug\OverLoadServer Interface.pdb
+C:\Users\o_moalla\Desktop\OverLoad Project\OverLoad Server\OverLoadServer Interface\obj\Debug\OverLoadServer_Interface.Properties.Resources.resources
+C:\Users\o_moalla\Desktop\OverLoad Project\OverLoad Server\OverLoadServer Interface\obj\Debug\OverLoadServer_Interface.ServerConfig.resources
+C:\Users\o_moalla\Desktop\OverLoad Project\OverLoad Server\OverLoadServer Interface\obj\Debug\OverLoadServer Interface.csproj.GenerateResource.Cache
+C:\Users\o_moalla\Desktop\OverLoad Project\OverLoad Server\OverLoadServer Interface\obj\Debug\OverLoadServer Interface.exe
+C:\Users\o_moalla\Desktop\OverLoad Project\OverLoad Server\OverLoadServer Interface\obj\Debug\OverLoadServer Interface.pdb
+C:\Users\o_moalla\Desktop\OverLoad Project\OverLoad Server\OverLoadServer Interface\obj\Debug\OverLoadServer Interface.csprojResolveAssemblyReference.cache
+D:\OverLoad Project\OverLoad Server\OverLoadServer Interface\bin\Debug\OverLoadServer Interface.exe.config
+D:\OverLoad Project\OverLoad Server\OverLoadServer Interface\obj\Debug\OverLoadServer Interface.exe
+D:\OverLoad Project\OverLoad Server\OverLoadServer Interface\obj\Debug\OverLoadServer Interface.pdb
+D:\OverLoad Project\OverLoad Server\OverLoadServer Interface\bin\Debug\OverLoadServer Interface.exe
+D:\OverLoad Project\OverLoad Server\OverLoadServer Interface\bin\Debug\OverLoadServer Interface.pdb
+D:\OverLoad Project\OverLoad Server\OverLoadServer Interface\obj\Debug\OverLoadServer_Interface.Properties.Resources.resources
+D:\OverLoad Project\OverLoad Server\OverLoadServer Interface\obj\Debug\OverLoadServer_Interface.ServerConfig.resources
+D:\OverLoad Project\OverLoad Server\OverLoadServer Interface\obj\Debug\OverLoadServer Interface.csproj.GenerateResource.Cache
+D:\OverLoad Project\OverLoad Server\OverLoadServer Interface\obj\Debug\OverLoadServer Interface.csprojResolveAssemblyReference.cache
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\bin\Debug\System.Data.SQLite.dll
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\bin\Debug\System.Data.SQLite.xml
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\obj\Debug\OverLoadServer_Interface.Properties.Resources.resources
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\obj\Debug\OverLoadServer_Interface.ServerConfig.resources
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\obj\Debug\OverLoadServer Interface.csproj.GenerateResource.Cache
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\obj\Debug\OverLoadServer_Interface.Log.resources
+C:\Users\o_moalla\Desktop\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\bin\Debug\OverLoadServer Manager.exe.config
+C:\Users\o_moalla\Desktop\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\bin\Debug\OverLoadServer Manager.exe
+C:\Users\o_moalla\Desktop\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\bin\Debug\OverLoadServer Manager.pdb
+C:\Users\o_moalla\Desktop\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\bin\Debug\System.Data.SQLite.dll
+C:\Users\o_moalla\Desktop\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\bin\Debug\System.Data.SQLite.xml
+C:\Users\o_moalla\Desktop\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\obj\Debug\OverLoadServer_Interface.Log.resources
+C:\Users\o_moalla\Desktop\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\obj\Debug\OverLoadServer_Interface.Properties.Resources.resources
+C:\Users\o_moalla\Desktop\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\obj\Debug\OverLoadServer_Interface.ServerConfig.resources
+C:\Users\o_moalla\Desktop\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\obj\Debug\OverLoadServer Interface.csproj.GenerateResource.Cache
+C:\Users\o_moalla\Desktop\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\obj\Debug\OverLoadServer Manager.exe
+C:\Users\o_moalla\Desktop\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\obj\Debug\OverLoadServer Manager.pdb
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\bin\Debug\OverLoadServer Manager.exe.config
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\obj\Debug\OverLoadServer Manager.exe
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\obj\Debug\OverLoadServer Manager.pdb
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\bin\Debug\OverLoadServer Manager.exe
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\bin\Debug\OverLoadServer Manager.pdb
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoadServer Interface\obj\Debug\OverLoadServer Interface.csprojResolveAssemblyReference.cache

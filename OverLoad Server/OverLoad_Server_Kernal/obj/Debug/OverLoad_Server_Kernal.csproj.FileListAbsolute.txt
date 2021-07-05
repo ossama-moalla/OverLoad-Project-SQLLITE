@@ -1,0 +1,17 @@
+D:\OverLoad Project\OverLoad Server\OverLoad_Server_Kernal\bin\Debug\OverLoad_Server_Kernal.exe.config
+D:\OverLoad Project\OverLoad Server\OverLoad_Server_Kernal\bin\Debug\OverLoad_Server_Kernal.exe
+D:\OverLoad Project\OverLoad Server\OverLoad_Server_Kernal\bin\Debug\OverLoad_Server_Kernal.pdb
+D:\OverLoad Project\OverLoad Server\OverLoad_Server_Kernal\obj\Debug\OverLoad_Server_Kernal.exe
+D:\OverLoad Project\OverLoad Server\OverLoad_Server_Kernal\obj\Debug\OverLoad_Server_Kernal.pdb
+D:\OverLoad Project\OverLoad Server\OverLoad_Server_Kernal\obj\Debug\OverLoad_Server_Kernal.csprojResolveAssemblyReference.cache
+D:\OverLoad Project\OverLoad Server\OverLoad_Server_Kernal\obj\Debug\OverLoad_Server_Kernal.ProjectInstaller.resources
+D:\OverLoad Project\OverLoad Server\OverLoad_Server_Kernal\obj\Debug\OverLoad_Server_Kernal.csproj.GenerateResource.Cache
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoad_Server_Kernal\bin\Debug\OverLoad_Server_Kernal.exe.config
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoad_Server_Kernal\bin\Debug\OverLoad_Server_Kernal.exe
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoad_Server_Kernal\bin\Debug\OverLoad_Server_Kernal.pdb
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoad_Server_Kernal\bin\Debug\System.Data.SQLite.dll
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoad_Server_Kernal\bin\Debug\System.Data.SQLite.xml
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoad_Server_Kernal\obj\Debug\OverLoad_Server_Kernal.ProjectInstaller.resources
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoad_Server_Kernal\obj\Debug\OverLoad_Server_Kernal.csproj.GenerateResource.Cache
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoad_Server_Kernal\obj\Debug\OverLoad_Server_Kernal.exe
+D:\ItemManagment\OverLoad Project_SQLITE\OverLoad Server\OverLoad_Server_Kernal\obj\Debug\OverLoad_Server_Kernal.pdb

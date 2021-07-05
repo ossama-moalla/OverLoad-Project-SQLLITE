@@ -1,0 +1,1195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{55D4ED19-F70A-453A-BA65-954FA77ED200}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OverLoad_Client</RootNamespace>
+    <AssemblyName>OverLoad Client Ver 2.0</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ASD.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="NuGet.Common, Version=4.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\NuGet.Common.4.6.4\lib\netstandard1.3\NuGet.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.112.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.Core.1.0.112.0\lib\net451\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountingObj\AccountingSQL.cs" />
+    <Compile Include="AccountingObj\Forms\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\Add_AccessContainerPremession_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\Add_AccessContainerPremession_Form.Designer.cs">
+      <DependentUpon>Add_AccessContainerPremession_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\Change_MY_Password_From.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\Change_MY_Password_From.Designer.cs">
+      <DependentUpon>Change_MY_Password_From.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\EmployeeUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\EmployeeUserForm.Designer.cs">
+      <DependentUpon>EmployeeUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\ExchangeOPRForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\ExchangeOPRForm.Designer.cs">
+      <DependentUpon>ExchangeOPRForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class1.cs" />
+    <Compile Include="ExecuteSQLCommand_Insert_Serialiaze_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExecuteSQLCommand_Insert_Serialiaze_Form.Designer.cs">
+      <DependentUpon>ExecuteSQLCommand_Insert_Serialiaze_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\Forms\MaintenanceOPR_Accessories_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\Forms\MaintenanceOPR_Accessories_Form.Designer.cs">
+      <DependentUpon>MaintenanceOPR_Accessories_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\ShowRavageOPR_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\ShowRavageOPR_Form.Designer.cs">
+      <DependentUpon>ShowRavageOPR_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\MainWindow_MoneyOPR_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\MainWindow_MoneyOPR_Form.designer.cs">
+      <DependentUpon>MainWindow_MoneyOPR_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\MainWindow_PayOrder_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\MainWindow_PayOrder_Form.designer.cs">
+      <DependentUpon>MainWindow_PayOrder_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\MainWindow_Maintenance_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\MainWindow_Maintenance_Form.designer.cs">
+      <DependentUpon>MainWindow_Maintenance_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\MainWindow_Sell_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\MainWindow_Sell_Form.designer.cs">
+      <DependentUpon>MainWindow_Sell_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\MainWindow_Buy_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\MainWindow_Buy_Form.designer.cs">
+      <DependentUpon>MainWindow_Buy_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\MainWindowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\MainWindowForm.designer.cs">
+      <DependentUpon>MainWindowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\MoneyTransFormOPRForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\MoneyTransFormOPRForm.Designer.cs">
+      <DependentUpon>MoneyTransFormOPRForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\PayOUTForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\PayOUTForm.Designer.cs">
+      <DependentUpon>PayOUTForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\PayINForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\PayINForm.Designer.cs">
+      <DependentUpon>PayINForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\Add_AccessFolderPremession_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\Add_AccessFolderPremession_Form.Designer.cs">
+      <DependentUpon>Add_AccessFolderPremession_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\ShowLogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\ShowLogForm.Designer.cs">
+      <DependentUpon>ShowLogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\ShowEmployeeUserAccountsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\ShowEmployeeUserAccountsForm.Designer.cs">
+      <DependentUpon>ShowEmployeeUserAccountsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\Stuck_MoneyTransformOPR_OUT_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\Stuck_MoneyTransformOPR_OUT_Form.Designer.cs">
+      <DependentUpon>Stuck_MoneyTransformOPR_OUT_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\Stuck_MoneyTransformOPR_IN_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountingObj\Forms\Stuck_MoneyTransformOPR_IN_Form.Designer.cs">
+      <DependentUpon>Stuck_MoneyTransformOPR_IN_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="APP_Choice_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="APP_Choice_Form.Designer.cs">
+      <DependentUpon>APP_Choice_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Company\Forms\CompanyManagmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Company\Forms\CompanyManagmentForm.Designer.cs">
+      <DependentUpon>CompanyManagmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Company\Forms\CompanyPayOrdersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Company\Forms\CompanyPayOrdersForm.Designer.cs">
+      <DependentUpon>CompanyPayOrdersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Company\Forms\EmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Company\Forms\EmployeeForm.Designer.cs">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Company\Forms\EmployeeSalaryClauseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Company\Forms\EmployeeSalaryClauseForm.Designer.cs">
+      <DependentUpon>EmployeeSalaryClauseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Company\Forms\EndAssignForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Company\Forms\EndAssignForm.Designer.cs">
+      <DependentUpon>EndAssignForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Company\Forms\EndJobStartForm .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Company\Forms\EndJobStartForm .Designer.cs">
+      <DependentUpon>EndJobStartForm .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Company\Forms\EmployeeMent_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Company\Forms\EmployeeMent_Form.Designer.cs">
+      <DependentUpon>EmployeeMent_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Company\Forms\AssignForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Company\Forms\AssignForm.Designer.cs">
+      <DependentUpon>AssignForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Company\Forms\CertificateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Company\Forms\CertificateForm.Designer.cs">
+      <DependentUpon>CertificateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Company\Forms\EmployeePayOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Company\Forms\EmployeePayOrderForm.Designer.cs">
+      <DependentUpon>EmployeePayOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Company\Forms\QualificationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Company\Forms\QualificationForm.Designer.cs">
+      <DependentUpon>QualificationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Company\Forms\PartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Company\Forms\PartForm.designer.cs">
+      <DependentUpon>PartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Company\Forms\JobStartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Company\Forms\JobStartForm.Designer.cs">
+      <DependentUpon>JobStartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Company\Forms\SalaryClauseDeductionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Company\Forms\SalaryClauseDeductionForm.Designer.cs">
+      <DependentUpon>SalaryClauseDeductionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Company\Forms\SalaryClauseDueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Company\Forms\SalaryClauseDueForm.Designer.cs">
+      <DependentUpon>SalaryClauseDueForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Company\Forms\CompanySalarysForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Company\Forms\CompanySalarysForm.Designer.cs">
+      <DependentUpon>CompanySalarysForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Company\Forms\SalarysPayOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Company\Forms\SalarysPayOrderForm.Designer.cs">
+      <DependentUpon>SalarysPayOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Company\Forms\ShowEmployeeMentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Company\Forms\ShowEmployeeMentsForm.Designer.cs">
+      <DependentUpon>ShowEmployeeMentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Company\Forms\ShowPartsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Company\Forms\ShowPartsForm.Designer.cs">
+      <DependentUpon>ShowPartsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration\ConfigurationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuration\ConfigurationForm.Designer.cs">
+      <DependentUpon>ConfigurationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountingObj\Objects.cs" />
+    <Compile Include="Company\Objects.cs" />
+    <Compile Include="Company\CompanySQL.cs" />
+    <Compile Include="Configuration\AddCurrencyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuration\AddCurrencyForm.Designer.cs">
+      <DependentUpon>AddCurrencyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseFunctions.cs" />
+    <Compile Include="DataBaseInterface.cs" />
+    <Compile Include="InputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputBox.designer.cs">
+      <DependentUpon>InputBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemObj\Forms\Equivalence_Group_Items_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemObj\Forms\Equivalence_Group_Items_Form.designer.cs">
+      <DependentUpon>Equivalence_Group_Items_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemObj\Forms\ItemReport_Maintenance_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemObj\Forms\ItemReport_Maintenance_Form.Designer.cs">
+      <DependentUpon>ItemReport_Maintenance_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemObj\Forms\ItemReport_Sell_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemObj\Forms\ItemReport_Sell_Form.Designer.cs">
+      <DependentUpon>ItemReport_Sell_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemObj\Forms\ItemReport_Buy_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemObj\Forms\ItemReport_Buy_Form.Designer.cs">
+      <DependentUpon>ItemReport_Buy_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemObj\Forms\Equivalence_Group_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemObj\Forms\Equivalence_Group_Form.designer.cs">
+      <DependentUpon>Equivalence_Group_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemObj\Forms\User_AvailabeItemsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemObj\Forms\User_AvailabeItemsForm.Designer.cs">
+      <DependentUpon>User_AvailabeItemsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemObj\Forms\User_ShowItemsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemObj\Forms\User_ShowItemsForm.Designer.cs">
+      <DependentUpon>User_ShowItemsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Log.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Log.designer.cs">
+      <DependentUpon>Log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogINForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogINForm.designer.cs">
+      <DependentUpon>LogINForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OverLoad  Installer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OverLoad  Installer.Designer.cs">
+      <DependentUpon>OverLoad  Installer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OverLoadClientNET.cs" />
+    <Compile Include="OverLoad_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProgramGeneralMethods.cs" />
+    <Compile Include="ReceiveMessage_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceiveMessage_Form.Designer.cs">
+      <DependentUpon>ReceiveMessage_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\BillBuy_Print_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\BillBuy_Print_Form.Designer.cs">
+      <DependentUpon>BillBuy_Print_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\BillMaintenance_Print_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\BillMaintenance_Print_Form.Designer.cs">
+      <DependentUpon>BillMaintenance_Print_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\BillSell_Print_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\BillSell_Print_Form.Designer.cs">
+      <DependentUpon>BillSell_Print_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemObj\Forms\AvailableItemTopLevelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemObj\Forms\AvailableItemTopLevelForm.Designer.cs">
+      <DependentUpon>AvailableItemTopLevelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemObj\Forms\AvailableItem_ItemIN_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemObj\Forms\AvailableItem_ItemIN_Form.Designer.cs">
+      <DependentUpon>AvailableItem_ItemIN_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemObj\Forms\ShowAvailableItemSimpleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemObj\Forms\ShowAvailableItemSimpleForm.Designer.cs">
+      <DependentUpon>ShowAvailableItemSimpleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\Forms\AddDiagnosticFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\Forms\AddDiagnosticFile.Designer.cs">
+      <DependentUpon>AddDiagnosticFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\Forms\BillMaintenanceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\Forms\BillMaintenanceForm.Designer.cs">
+      <DependentUpon>BillMaintenanceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\Forms\Fault_MissedFaultItem_TagForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\Forms\Fault_MissedFaultItem_TagForm.Designer.cs">
+      <DependentUpon>Fault_MissedFaultItem_TagForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\Forms\DiagnosticOPR_Fault_TagForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\Forms\DiagnosticOPR_Fault_TagForm.Designer.cs">
+      <DependentUpon>DiagnosticOPR_Fault_TagForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\Forms\MaintenanceOPRForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\Forms\MaintenanceOPRForm.Designer.cs">
+      <DependentUpon>MaintenanceOPRForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\Forms\MaintenanceOPR_EndWorkForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\Forms\MaintenanceOPR_EndWorkForm.Designer.cs">
+      <DependentUpon>MaintenanceOPR_EndWorkForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\Forms\MaintenanceOPR_NotFinish_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\Forms\MaintenanceOPR_NotFinish_Form.Designer.cs">
+      <DependentUpon>MaintenanceOPR_NotFinish_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\Forms\MaintenanceOPR_Report_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\Forms\MaintenanceOPR_Report_Form.Designer.cs">
+      <DependentUpon>MaintenanceOPR_Report_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\Forms\RepairOPRForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\Forms\RepairOPRForm.Designer.cs">
+      <DependentUpon>RepairOPRForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\Forms\DiagnosticOPRForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\Forms\DiagnosticOPRForm.Designer.cs">
+      <DependentUpon>DiagnosticOPRForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\Forms\FaultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\Forms\FaultForm.Designer.cs">
+      <DependentUpon>FaultForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\Forms\MaintenanceAccessoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\Forms\MaintenanceAccessoryForm.Designer.cs">
+      <DependentUpon>MaintenanceAccessoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\Forms\MeasureOPRForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\Forms\MeasureOPRForm.Designer.cs">
+      <DependentUpon>MeasureOPRForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\Forms\MissedFault_Item_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\Forms\MissedFault_Item_Form.Designer.cs">
+      <DependentUpon>MissedFault_Item_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\Objects.cs" />
+    <Compile Include="Maintenance\MaintenanceSQL.cs" />
+    <Compile Include="Reports\Objects.cs" />
+    <Compile Include="SelecObjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelecObjectForm.designer.cs">
+      <DependentUpon>SelecObjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServerSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServerSelectForm.designer.cs">
+      <DependentUpon>ServerSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowSqlQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowSqlQuery.designer.cs">
+      <DependentUpon>ShowSqlQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trade\Forms\Container\Place_ExitsItems_Item_ItemIN_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trade\Forms\Container\Place_ExitsItems_Item_ItemIN_Form.Designer.cs">
+      <DependentUpon>Place_ExitsItems_Item_ItemIN_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trade\Forms\Container\Place_ExistsItems_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trade\Forms\Container\Place_ExistsItems_Form.Designer.cs">
+      <DependentUpon>Place_ExistsItems_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trade\Forms\Container\User_ShowLocationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trade\Forms\Container\User_ShowLocationsForm.Designer.cs">
+      <DependentUpon>User_ShowLocationsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trade\Forms\Industrial\Forms\DisAssemblageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trade\Forms\Industrial\Forms\DisAssemblageForm.Designer.cs">
+      <DependentUpon>DisAssemblageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trade\Forms\Industrial\Forms\IndustrialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trade\Forms\Industrial\Forms\IndustrialForm.Designer.cs">
+      <DependentUpon>IndustrialForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trade\Forms\Industrial\Forms\AssemblageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trade\Forms\Industrial\Forms\AssemblageForm.Designer.cs">
+      <DependentUpon>AssemblageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trade\Forms\Industrial\Objects.cs" />
+    <Compile Include="Trade\Forms\Industrial\TradeSQL.cs" />
+    <Compile Include="Trade\Forms\PriceInputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trade\Forms\PriceInputBox.designer.cs">
+      <DependentUpon>PriceInputBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemObj\Objects.cs" />
+    <Compile Include="Trade\Forms\Container\AddPlaceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trade\Forms\Container\AddPlaceForm.designer.cs">
+      <DependentUpon>AddPlaceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trade\Forms\TradeForms\BillAdditionalClauseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trade\Forms\TradeForms\BillAdditionalClauseForm.Designer.cs">
+      <DependentUpon>BillAdditionalClauseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trade\Forms\TradeForms\RavageOPR_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trade\Forms\TradeForms\RavageOPR_Form.Designer.cs">
+      <DependentUpon>RavageOPR_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trade\Forms\TradeForms\ItemIN_StoreReport_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trade\Forms\TradeForms\ItemIN_StoreReport_Form.Designer.cs">
+      <DependentUpon>ItemIN_StoreReport_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trade\Forms\TradeForms\ItemIN_Store_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trade\Forms\TradeForms\ItemIN_Store_Form.Designer.cs">
+      <DependentUpon>ItemIN_Store_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trade\Forms\TradeForms\OperationItemsIN_ItemOutListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trade\Forms\TradeForms\OperationItemsIN_ItemOutListForm.Designer.cs">
+      <DependentUpon>OperationItemsIN_ItemOutListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trade\Forms\TradeForms\ItemIN_ItemOutListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trade\Forms\TradeForms\ItemIN_ItemOutListForm.Designer.cs">
+      <DependentUpon>ItemIN_ItemOutListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trade\Forms\TradeForms\BillSellForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trade\Forms\TradeForms\BillSellForm.Designer.cs">
+      <DependentUpon>BillSellForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trade\Forms\TradeForms\BillBuyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trade\Forms\TradeForms\BillBuyForm.Designer.cs">
+      <DependentUpon>BillBuyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trade\Forms\TradeConact\ContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trade\Forms\TradeConact\ContactForm.designer.cs">
+      <DependentUpon>ContactForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trade\Forms\TradeConact\ContactAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trade\Forms\TradeConact\ContactAddForm.designer.cs">
+      <DependentUpon>ContactAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trade\Forms\TradeConact\ٍShowContactsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trade\Forms\TradeConact\ٍShowContactsForm.designer.cs">
+      <DependentUpon>ٍShowContactsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trade\Forms\Container\ContainerAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trade\Forms\Container\ContainerAddForm.designer.cs">
+      <DependentUpon>ContainerAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trade\Forms\TradeForms\ItemOUTForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trade\Forms\TradeForms\ItemOUTForm.Designer.cs">
+      <DependentUpon>ItemOUTForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trade\Forms\TradeForms\ItemINForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trade\Forms\TradeForms\ItemINForm.Designer.cs">
+      <DependentUpon>ItemINForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trade\Objects.cs" />
+    <Compile Include="ItemObj\Forms\AddItemFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemObj\Forms\AddItemFile.Designer.cs">
+      <DependentUpon>AddItemFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemObj\Forms\AddItemRelationShip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemObj\Forms\AddItemRelationShip.Designer.cs">
+      <DependentUpon>AddItemRelationShip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemObj\Forms\ConsumeUnitAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemObj\Forms\ConsumeUnitAddForm.designer.cs">
+      <DependentUpon>ConsumeUnitAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemObj\Forms\Form_Spec_Option.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemObj\Forms\Form_Spec_Option.Designer.cs">
+      <DependentUpon>Form_Spec_Option.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemObj\itemSQL.cs" />
+    <Compile Include="ItemObj\Forms\FolderSpec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemObj\Forms\FolderSpec.Designer.cs">
+      <DependentUpon>FolderSpec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemObj\Forms\ItemAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemObj\Forms\ItemAdd.Designer.cs">
+      <DependentUpon>ItemAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemObj\Forms\ItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemObj\Forms\ItemForm.Designer.cs">
+      <DependentUpon>ItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemObj\Forms\ItemPhotoAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemObj\Forms\ItemPhotoAdd.Designer.cs">
+      <DependentUpon>ItemPhotoAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemObj\Forms\ItemSpecValueADD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemObj\Forms\ItemSpecValueADD.Designer.cs">
+      <DependentUpon>ItemSpecValueADD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemObj\Forms\FolderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemObj\Forms\FolderForm.designer.cs">
+      <DependentUpon>FolderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Trade\TradeSQL.cs" />
+    <Compile Include="Wait_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wait_Form.Designer.cs">
+      <DependentUpon>Wait_Form.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AccountingObj\Forms\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountingObj\Forms\Add_AccessContainerPremession_Form.resx">
+      <DependentUpon>Add_AccessContainerPremession_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountingObj\Forms\Change_MY_Password_From.resx">
+      <DependentUpon>Change_MY_Password_From.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountingObj\Forms\EmployeeUserForm.resx">
+      <DependentUpon>EmployeeUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountingObj\Forms\ExchangeOPRForm.resx">
+      <DependentUpon>ExchangeOPRForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountingObj\Forms\ShowRavageOPR_Form.resx">
+      <DependentUpon>ShowRavageOPR_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountingObj\Forms\MainWindow_MoneyOPR_Form.resx">
+      <DependentUpon>MainWindow_MoneyOPR_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountingObj\Forms\MainWindow_PayOrder_Form.resx">
+      <DependentUpon>MainWindow_PayOrder_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountingObj\Forms\MainWindow_Maintenance_Form.resx">
+      <DependentUpon>MainWindow_Maintenance_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountingObj\Forms\MainWindow_Sell_Form.resx">
+      <DependentUpon>MainWindow_Sell_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountingObj\Forms\MainWindow_Buy_Form.resx">
+      <DependentUpon>MainWindow_Buy_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountingObj\Forms\MainWindowForm.resx">
+      <DependentUpon>MainWindowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountingObj\Forms\MoneyTransFormOPRForm.resx">
+      <DependentUpon>MoneyTransFormOPRForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountingObj\Forms\PayOUTForm.resx">
+      <DependentUpon>PayOUTForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountingObj\Forms\PayINForm.resx">
+      <DependentUpon>PayINForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountingObj\Forms\Add_AccessFolderPremession_Form.resx">
+      <DependentUpon>Add_AccessFolderPremession_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountingObj\Forms\ShowLogForm.resx">
+      <DependentUpon>ShowLogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountingObj\Forms\ShowEmployeeUserAccountsForm.resx">
+      <DependentUpon>ShowEmployeeUserAccountsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountingObj\Forms\Stuck_MoneyTransformOPR_OUT_Form.resx">
+      <DependentUpon>Stuck_MoneyTransformOPR_OUT_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountingObj\Forms\Stuck_MoneyTransformOPR_IN_Form.resx">
+      <DependentUpon>Stuck_MoneyTransformOPR_IN_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APP_Choice_Form.resx">
+      <DependentUpon>APP_Choice_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Company\Forms\CompanyManagmentForm.resx">
+      <DependentUpon>CompanyManagmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Company\Forms\CompanyPayOrdersForm.resx">
+      <DependentUpon>CompanyPayOrdersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Company\Forms\EmployeeForm.resx">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Company\Forms\EmployeeSalaryClauseForm.resx">
+      <DependentUpon>EmployeeSalaryClauseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Company\Forms\EndAssignForm.resx">
+      <DependentUpon>EndAssignForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Company\Forms\EndJobStartForm .resx">
+      <DependentUpon>EndJobStartForm .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Company\Forms\EmployeeMent_Form.resx">
+      <DependentUpon>EmployeeMent_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Company\Forms\AssignForm.resx">
+      <DependentUpon>AssignForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Company\Forms\CertificateForm.resx">
+      <DependentUpon>CertificateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Company\Forms\EmployeePayOrderForm.resx">
+      <DependentUpon>EmployeePayOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Company\Forms\QualificationForm.resx">
+      <DependentUpon>QualificationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Company\Forms\PartForm.resx">
+      <DependentUpon>PartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Company\Forms\JobStartForm.resx">
+      <DependentUpon>JobStartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Company\Forms\SalaryClauseDeductionForm.resx">
+      <DependentUpon>SalaryClauseDeductionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Company\Forms\SalaryClauseDueForm.resx">
+      <DependentUpon>SalaryClauseDueForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Company\Forms\CompanySalarysForm.resx">
+      <DependentUpon>CompanySalarysForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Company\Forms\SalarysPayOrderForm.resx">
+      <DependentUpon>SalarysPayOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Company\Forms\ShowEmployeeMentsForm.resx">
+      <DependentUpon>ShowEmployeeMentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Company\Forms\ShowPartsForm.resx">
+      <DependentUpon>ShowPartsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuration\ConfigurationForm.resx">
+      <DependentUpon>ConfigurationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuration\AddCurrencyForm.resx">
+      <DependentUpon>AddCurrencyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExecuteSQLCommand_Insert_Serialiaze_Form.resx">
+      <DependentUpon>ExecuteSQLCommand_Insert_Serialiaze_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputBox.resx">
+      <DependentUpon>InputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemObj\Forms\Equivalence_Group_Items_Form.resx">
+      <DependentUpon>Equivalence_Group_Items_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemObj\Forms\ItemReport_Maintenance_Form.resx">
+      <DependentUpon>ItemReport_Maintenance_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemObj\Forms\ItemReport_Sell_Form.resx">
+      <DependentUpon>ItemReport_Sell_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemObj\Forms\ItemReport_Buy_Form.resx">
+      <DependentUpon>ItemReport_Buy_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemObj\Forms\Equivalence_Group_Form.resx">
+      <DependentUpon>Equivalence_Group_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemObj\Forms\User_AvailabeItemsForm.resx">
+      <DependentUpon>User_AvailabeItemsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemObj\Forms\User_ShowItemsForm.resx">
+      <DependentUpon>User_ShowItemsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Log.resx">
+      <DependentUpon>Log.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogINForm.resx">
+      <DependentUpon>LogINForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\Forms\MaintenanceOPR_Accessories_Form.resx">
+      <DependentUpon>MaintenanceOPR_Accessories_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReceiveMessage_Form.resx">
+      <DependentUpon>ReceiveMessage_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BillBuy_Print_Form.resx">
+      <DependentUpon>BillBuy_Print_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BillMaintenance_Print_Form.resx">
+      <DependentUpon>BillMaintenance_Print_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BillSell_Print_Form.resx">
+      <DependentUpon>BillSell_Print_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemObj\Forms\AvailableItemTopLevelForm.resx">
+      <DependentUpon>AvailableItemTopLevelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemObj\Forms\AvailableItem_ItemIN_Form.resx">
+      <DependentUpon>AvailableItem_ItemIN_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemObj\Forms\ShowAvailableItemSimpleForm.resx">
+      <DependentUpon>ShowAvailableItemSimpleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\Forms\AddDiagnosticFile.resx">
+      <DependentUpon>AddDiagnosticFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\Forms\BillMaintenanceForm.resx">
+      <DependentUpon>BillMaintenanceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\Forms\Fault_MissedFaultItem_TagForm.resx">
+      <DependentUpon>Fault_MissedFaultItem_TagForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\Forms\DiagnosticOPR_Fault_TagForm.resx">
+      <DependentUpon>DiagnosticOPR_Fault_TagForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\Forms\MaintenanceOPRForm.resx">
+      <DependentUpon>MaintenanceOPRForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\Forms\MaintenanceOPR_EndWorkForm.resx">
+      <DependentUpon>MaintenanceOPR_EndWorkForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\Forms\MaintenanceOPR_NotFinish_Form.resx">
+      <DependentUpon>MaintenanceOPR_NotFinish_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\Forms\MaintenanceOPR_Report_Form.resx">
+      <DependentUpon>MaintenanceOPR_Report_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\Forms\RepairOPRForm.resx">
+      <DependentUpon>RepairOPRForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\Forms\DiagnosticOPRForm.resx">
+      <DependentUpon>DiagnosticOPRForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\Forms\FaultForm.resx">
+      <DependentUpon>FaultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\Forms\MaintenanceAccessoryForm.resx">
+      <DependentUpon>MaintenanceAccessoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\Forms\MeasureOPRForm.resx">
+      <DependentUpon>MeasureOPRForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\Forms\MissedFault_Item_Form.resx">
+      <DependentUpon>MissedFault_Item_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportBillBuy.rdlc" />
+    <EmbeddedResource Include="Reports\ReportBillMaintenance.rdlc" />
+    <EmbeddedResource Include="Reports\ReportBillSell.rdlc" />
+    <EmbeddedResource Include="SelecObjectForm.resx">
+      <DependentUpon>SelecObjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerSelectForm.resx">
+      <DependentUpon>ServerSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowSqlQuery.resx">
+      <DependentUpon>ShowSqlQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trade\Forms\Container\Place_ExitsItems_Item_ItemIN_Form.resx">
+      <DependentUpon>Place_ExitsItems_Item_ItemIN_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trade\Forms\Container\Place_ExistsItems_Form.resx">
+      <DependentUpon>Place_ExistsItems_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trade\Forms\Container\User_ShowLocationsForm.resx">
+      <DependentUpon>User_ShowLocationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trade\Forms\Industrial\Forms\DisAssemblageForm.resx">
+      <DependentUpon>DisAssemblageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trade\Forms\Industrial\Forms\IndustrialForm.resx">
+      <DependentUpon>IndustrialForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trade\Forms\Industrial\Forms\AssemblageForm.resx">
+      <DependentUpon>AssemblageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trade\Forms\PriceInputBox.resx">
+      <DependentUpon>PriceInputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemObj\Forms\AddItemFile.resx">
+      <DependentUpon>AddItemFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemObj\Forms\AddItemRelationShip.resx">
+      <DependentUpon>AddItemRelationShip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemObj\Forms\ConsumeUnitAddForm.resx">
+      <DependentUpon>ConsumeUnitAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemObj\Forms\Form_Spec_Option.resx">
+      <DependentUpon>Form_Spec_Option.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemObj\Forms\ItemForm.resx">
+      <DependentUpon>ItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemObj\Forms\FolderSpec.resx">
+      <DependentUpon>FolderSpec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemObj\Forms\ItemAdd.resx">
+      <DependentUpon>ItemAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemObj\Forms\ItemPhotoAdd.resx">
+      <DependentUpon>ItemPhotoAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemObj\Forms\ItemSpecValueADD.resx">
+      <DependentUpon>ItemSpecValueADD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemObj\Forms\FolderForm.resx">
+      <DependentUpon>FolderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Trade\Forms\Container\AddPlaceForm.resx">
+      <DependentUpon>AddPlaceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trade\Forms\TradeForms\BillAdditionalClauseForm.resx">
+      <DependentUpon>BillAdditionalClauseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trade\Forms\TradeForms\RavageOPR_Form.resx">
+      <DependentUpon>RavageOPR_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trade\Forms\TradeForms\ItemIN_StoreReport_Form.resx">
+      <DependentUpon>ItemIN_StoreReport_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trade\Forms\TradeForms\ItemIN_Store_Form.resx">
+      <DependentUpon>ItemIN_Store_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trade\Forms\TradeForms\OperationItemsIN_ItemOutListForm.resx">
+      <DependentUpon>OperationItemsIN_ItemOutListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trade\Forms\TradeForms\ItemIN_ItemOutListForm.resx">
+      <DependentUpon>ItemIN_ItemOutListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trade\Forms\TradeForms\BillSellForm.resx">
+      <DependentUpon>BillSellForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trade\Forms\TradeForms\BillBuyForm.resx">
+      <DependentUpon>BillBuyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trade\Forms\TradeConact\ContactForm.resx">
+      <DependentUpon>ContactForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trade\Forms\TradeConact\ContactAddForm.resx">
+      <DependentUpon>ContactAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trade\Forms\TradeConact\ٍShowContactsForm.resx">
+      <DependentUpon>ٍShowContactsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trade\Forms\Container\ContainerAddForm.resx">
+      <DependentUpon>ContainerAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trade\Forms\TradeForms\ItemOUTForm.resx">
+      <DependentUpon>ItemOUTForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trade\Forms\TradeForms\ItemINForm.resx">
+      <DependentUpon>ItemINForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OverLoad_Server_DataBase.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\ItemProject.Reports.Objects.BillAdditionalClause_Report.datasource" />
+    <None Include="Properties\DataSources\ItemProject.Reports.Objects.BillMaintenance_DiagnosticOPR_Clause_Report.datasource" />
+    <None Include="Properties\DataSources\ItemProject.Reports.Objects.BillMaintenance_RepairClause_Report.datasource" />
+    <None Include="Properties\DataSources\ItemProject.Reports.Objects.Bill_PayIN_Report.datasource" />
+    <None Include="Properties\DataSources\ItemProject.Reports.Objects.Bill_PayOUT_Report.datasource" />
+    <None Include="Properties\DataSources\ItemProject.Reports.Objects.ItemIN_Report.datasource" />
+    <None Include="Properties\DataSources\ItemProject.Reports.Objects.ItemOUT_Report.datasource" />
+    <None Include="Properties\DataSources\ItemProject.Reports.Objects.MaintenanceFault_Print_Report.datasource" />
+    <None Include="Properties\DataSources\ItemProject.Reports.Objects.MaintenanceOPR_Accessory_Print_Report.datasource" />
+    <None Include="Properties\DataSources\ItemProject.Reports.Objects.Missed_Fault_Item_Print_Report.datasource" />
+    <None Include="Properties\DataSources\ItemProject.Trade.Objects.IndustryOPR.datasource" />
+    <None Include="Properties\DataSources\ItemProject.Trade.Objects.ItemOUT.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ds.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ASD.ico" />
+    <None Include="Resources\ASD.ico" />
+    <None Include="Resources\images.jpg" />
+    <None Include="Resources\person-placeholder.jpg" />
+    <None Include="Resources\EmployeeImage.bmp" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\System.Data.SQLite.Core.1.0.112.0\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('packages\System.Data.SQLite.Core.1.0.112.0\build\net451\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\System.Data.SQLite.Core.1.0.112.0\build\net451\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\System.Data.SQLite.Core.1.0.112.0\build\net451\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
