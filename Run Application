@@ -1,0 +1,5 @@
+1-Install Service then install Server Interface on the Server, run server interface and set udp port broadcast the run service.
+2-on the Client install client app , when launch client set udp port the same to the port set in server interface and u will get the broadcast, double click on the server in list.
+when app launch: enter username:Administrator and password empty to login
+
+for mor info contact me:ossama_moalla@hotmail.com
